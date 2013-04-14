@@ -22,9 +22,9 @@ bool inject(int processid)
 		/*
 		Param 1 - Handle zum Prozess
 		Param 2 - Adresse ab der nach freiem Speicher gesucht werden soll
-		Param 3 - Größe des anzufordernden Speichers
+		Param 3 - Grï¿½ï¿½e des anzufordernden Speichers
 		Param 4 - 
-		Param 5 - Wofür der Speicher verwendet werden soll
+		Param 5 - Wofï¿½r der Speicher verwendet werden soll
 		*/
 	SIZE_T *written = 0;
 	WriteProcessMemory( hProcess, (void*) AllocAdresse, (void*) dll_path, dll_len, written);
@@ -32,7 +32,7 @@ bool inject(int processid)
 		Param 1 - Handle zum Prozess
 		Param 2 - Startadresse des zu beschreibenden Speichers
 		Param 3 - Wert der in den Speicher geschrieben werden soll
-		Param 4 - Speichergröße des Wertes
+		Param 4 - Speichergrï¿½ï¿½e des Wertes
 		Param 5 - unwichtig
 		*/
 
@@ -41,9 +41,9 @@ bool inject(int processid)
 		/*
 		Param 1 - Handle zum Prozess
 		Param 2 - unwichtig
-		Param 3 - Thread Stack Größe
+		Param 3 - Thread Stack Grï¿½ï¿½e
 		Param 4 - Adresse der Funktion die aufgerufen werden soll
-		Param 5 - übergebene Parameter
+		Param 5 - ï¿½bergebene Parameter
 		Param 6 & 7 - unwichtig
 		*/
 	if( hRemoteThread == NULL)
@@ -73,9 +73,6 @@ int main(void)
 		do 
 		{ 
 			cout << ProcessEntry.th32ProcessID << "\t" << ProcessEntry.szExeFile << "\n";
-			// Ein Prozess namens Game.exe wurde gefunden. 
-			// Hier kann man nun die Process-ID speichern. 
-			// Die PID ist in ProcessEntry.th32ProcessID gespeichert. 
 			if(injected == FALSE)
 			{
 				injected = inject(ProcessEntry.th32ProcessID);
